@@ -11,9 +11,9 @@ model = pickle.load(open('model/pipe.pkl', 'rb'))
 # initialize app
 app = Flask( __name__ )
 
-@app.route('/')
-def home_endpoint():
-    return {'status': 'ok'}
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    return "Welcome to the Rossmann API!"
 
 @app.route('/rossmann/predict', methods=['POST'])
 def rossmann_predict():
