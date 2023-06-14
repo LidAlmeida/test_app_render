@@ -11,6 +11,10 @@ model = pickle.load(open('model/pipe.pkl', 'rb'))
 # initialize app
 app = Flask( __name__ )
 
+@app.route('/test')
+def test_status():
+    return {'status': 'ok'}
+
 @app.route('/rossmann/predict', methods=['POST'])
 def rossmann_predict():
     test_json = request.get_json()
@@ -43,7 +47,7 @@ def rossmann_predict():
         return Response(response_json, status=200, mimetype='application/json')
 
     else:
-        return Response('{}', status=200, mimetype='application/json')
+        return Response('{No Data}', status=200, mimetype='application/json')
     
 if __name__ == '__main__':
     port = os.environ.get('PORT', 5000)
