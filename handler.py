@@ -40,11 +40,7 @@ def rossmann_predict():
         # prediction
         data_response = initial_pipeline.get_prediction(model, test_raw, data3)
 
-        # create response json
-        response_dict = {'data_response': data_response, 'raw_data': test_json}
-        response_json = pd.io.json.dumps(response_dict)
-
-        return Response(response_json, status=200, mimetype='application/json')
+        return data_response
 
     else:
         return Response('{No Data}', status=200, mimetype='application/json')
