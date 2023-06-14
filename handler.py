@@ -5,13 +5,13 @@ import pandas as pd
 import os
 
 # loading model - pipeline
-model = pickle.load(open('pipe.pkl', 'rb'))
+model = pickle.load(open('model/pipe.pkl', 'rb'))
 
 # initialize app
 app = Flask( __name__ )
 
 
-@app.route('/predict', methods=['POST'])
+@app.route('/rossmann/predict', methods=['POST'])
 def rossmann_predict():
     test_json = request.get_json()
 
