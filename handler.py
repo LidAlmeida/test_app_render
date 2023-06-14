@@ -5,7 +5,7 @@ import pandas as pd
 import os
 
 # loading model - pipeline
-model = pickle.load(open('test_app_render/model/pipe.pkl', 'rb'))
+model = pickle.load(open('model/pipe.pkl', 'rb'))
 
 
 # initialize app
