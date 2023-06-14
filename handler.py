@@ -11,8 +11,8 @@ model = pickle.load(open('model/pipe.pkl', 'rb'))
 # initialize app
 app = Flask( __name__ )
 
-@app.route('/test')
-def test_status():
+@app.route('/')
+def home_endpoint():
     return {'status': 'ok'}
 
 @app.route('/rossmann/predict', methods=['POST'])
