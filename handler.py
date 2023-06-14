@@ -8,10 +8,10 @@ import os
 model = pickle.load(open('models/pipe.pkl', 'rb'))
 
 # initialize app
-app = Flask(__name__)
+app = Flask( __name__ )
 
 
-@app.route('/', methods=['POST'])
+@app.route('/rossmann/predict', methods=['POST'])
 def rossmann_predict():
     test_json = request.get_json()
 
