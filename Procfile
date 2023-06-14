@@ -1,1 +1,1 @@
-web: python handler.py
+web: python handler_test.py
